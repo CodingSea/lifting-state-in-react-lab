@@ -1,3 +1,5 @@
+import Ingredient from "../Ingredient/Ingredient";
+
 const IngredientList = (props) =>
 {
 
@@ -5,7 +7,6 @@ const IngredientList = (props) =>
     {
         const copyIngredient = [...props.stack, ingredient];
         props.setStack(copyIngredient);
-        console.log(props.stack);
     }
 
     return <ul>
@@ -13,8 +14,7 @@ const IngredientList = (props) =>
             props.ingredientList.map((i, index) => 
             {
                 return <li key={index} style={{background: i.color}}>
-                    { i.name }
-                    <button onClick={() => AddToStack(i)}>+</button>
+                    <Ingredient ingredient={i} AddToStack={AddToStack} inStack={false} />
                 </li>
             })
         }
