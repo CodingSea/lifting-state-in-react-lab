@@ -5,7 +5,7 @@ const IngredientList = (props) =>
     {
         const copyIngredient = [...props.stack, ingredient];
         props.setStack(copyIngredient);
-        console.log(copyIngredient);
+        console.log(props.stack);
     }
 
     return <ul>

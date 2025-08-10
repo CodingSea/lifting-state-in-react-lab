@@ -31,7 +31,7 @@ const App = () =>
       <h1>Burger Stacker</h1>
       <section>
         <IngredientList ingredientList={availableIngredients} stack={stack} setStack={setStack} />
-        <BurgerStack />
+        <BurgerStack stack={stack} setStack={setStack} />
       </section>
     </main>
   );
