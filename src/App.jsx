@@ -1,9 +1,13 @@
-// src/App.jsx
-
 import './App.css';
+import IngredientList from './components/IngredientList/IngredientList';
+import BurgerStack from './components/BurgerStack/BurgerStack';
 
-const App = () => {
-  const availableIngredients = [
+import { useState } from "react";
+
+const App = () =>
+{
+  const availableIngredients = 
+  [
     { name: 'Kaiser Bun', color: 'saddlebrown' },
     { name: 'Sesame Bun', color: 'sandybrown' },
     { name: 'Gluten Free Bun', color: 'peru' },
@@ -20,11 +24,14 @@ const App = () => {
     { name: 'Swiss Cheese', color: '#F1E1A8' },
   ];
 
+  const [stack, setStack] = useState([]);
+
   return (
     <main>
       <h1>Burger Stacker</h1>
       <section>
-      {/* List & Stack components */}
+        <IngredientList ingredientList={availableIngredients} stack={stack} setStack={setStack} />
+        <BurgerStack />
       </section>
     </main>
   );
